@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -r public",
-    "build": "npm run build-prod",
+    "build": "npm run fetch;npm run build-prod",
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
     "start": "webpack-dev-server -d --mode development",
     "preview": "npm run build-prod && browser-sync start --server public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fetch": "node ./scripts/fetch.js"
   },
   "repository": {
     "type": "git",
