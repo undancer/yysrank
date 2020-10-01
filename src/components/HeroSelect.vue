@@ -6,7 +6,7 @@
     size="large"
     @change="onChange"
   >
-    <template slot="displayRender" slot-scope="{ labels, selectedOptions }">
+    <template v-slot:displayRender="{ labels, selectedOptions }">
       <span
         v-for="(label, index) in labels"
         :key="selectedOptions[index].value"

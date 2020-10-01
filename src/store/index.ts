@@ -1,11 +1,8 @@
-import Vuex from "vuex";
-import Vue from "vue";
 import { history, search } from "@/store/mutations";
 import initialState, { AppState } from "@/store/states";
+import { createStore } from "vuex";
 
-Vue.use(Vuex);
-
-const store = new Vuex.Store<AppState>({
+const store = createStore<AppState>({
   state: initialState,
   mutations: {
     search,

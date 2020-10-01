@@ -1,21 +1,17 @@
-import Vue from "vue";
+import { createApp } from "vue";
 import Antd from "ant-design-vue";
 import App from "@/App.vue";
 import router from "@/router";
-import VueCookies from "vue-cookies";
-import VueRouter from "vue-router";
 import store from "@/store";
 
-Vue.config.productionTip = false;
+// Vue.config.productionTip = false
 
-// console.log('vue init');
-
-Vue.use(Antd);
-Vue.use(VueRouter);
-Vue.use(VueCookies);
-
-new Vue({
-  render: h => h(App),
-  store,
-  router
-}).$mount("#app");
+/* eslint-disable */
+// @ts-ignore
+createApp(App)
+  /* eslint-disable */
+  .use(Antd)
+  .use(store)
+  .use(router)
+  // .use(VueCookies);
+  .mount("#app");

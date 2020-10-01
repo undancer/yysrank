@@ -75,7 +75,7 @@
     <a-card style="margin-top: 32px" title="历史数据">
       <a-table :data-source="histories">
         <a-table-column title="#" width="32px">
-          <template slot-scope="{ index }">
+          <template v-slot="{ index }">
             {{ index }}
           </template>
         </a-table-column>
@@ -119,7 +119,7 @@
           </template>
         </a-table-column>
         <a-table-column title="更多" width="24px">
-          <template slot-scope="record">
+          <template v-slot="record">
             <a-button type="link" @click="() => showHistory(record.key)">
               <a-icon type="small-dash" />
             </a-button>
