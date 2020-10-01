@@ -2,7 +2,7 @@
   <div>
     <a-collapse v-model="activeKey">
       <a-collapse-panel
-          v-for="({attributes,html},index) in tutorials"
+          v-for="({ attributes, html }, index) in tutorials"
           :key="`${index}`"
           :header="attributes.title"
       >
@@ -13,21 +13,17 @@
 </template>
 
 <script>
-
 import tutorials from "@/modules/tutorials";
 
 export default {
   name: "Tutorial",
   data() {
     return {
-      activeKey: '0',
-      tutorials,
-    }
+      activeKey: "0",
+      tutorials
+    };
   }
 };
 </script>
 
-<style scoped>
-
-</style>
-
+<style scoped></style>

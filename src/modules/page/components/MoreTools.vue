@@ -2,7 +2,7 @@
   <div>
     <a-collapse v-model="activeKey">
       <a-collapse-panel
-          v-for="({attributes,html},index) in tools"
+          v-for="({ attributes, html }, index) in tools"
           :key="`${index}`"
           :header="attributes.title"
       >
@@ -19,14 +19,11 @@ export default {
   name: "MoreTools",
   data() {
     return {
-      activeKey: '0',
-      tools,
-    }
+      activeKey: "0",
+      tools
+    };
   }
 };
 </script>
 
-<style scoped>
-
-</style>
-
+<style scoped></style>

@@ -1,15 +1,18 @@
 <template>
   <a-cascader
-      :options="options"
-      :placeholder="placeholder"
-      :show-search="{ filter }"
-      size="large"
-      @change="onChange"
+    :options="options"
+    :placeholder="placeholder"
+    :show-search="{ filter }"
+    size="large"
+    @change="onChange"
   >
     <template slot="displayRender" slot-scope="{ labels, selectedOptions }">
-      <span v-for="(label, index) in labels" :key="selectedOptions[index].value">
+      <span
+        v-for="(label, index) in labels"
+        :key="selectedOptions[index].value"
+      >
         <span v-if="index === labels.length - 1">
-<!--          <Hero :id="selectedOptions[index].value" :size="16" :show-name="false"/>-->
+          <!--          <Hero :id="selectedOptions[index].value" :size="16" :show-name="false"/>-->
           {{ label }}
         </span>
       </span>
@@ -18,17 +21,16 @@
 </template>
 
 <script>
-
 import pinyin from "@/utils/pinyin";
-import {HeroTable} from "@/data";
+import { HeroTable } from "@/data";
 
 const mapper = {
-  '2': 'N',
-  '3': 'R',
-  '4': 'SR',
-  '5': 'SSR',
-  '6': 'SP',
-}
+  "2": "N",
+  "3": "R",
+  "4": "SR",
+  "5": "SSR",
+  "6": "SP"
+};
 
 const groupBy = (array, id) => {
   const groups = {};
@@ -44,24 +46,24 @@ export default {
   name: "HeroSelect",
   // components: {Hero},
   props: {
-    placeholder: String,
+    placeholder: String
   },
   data() {
     const heroTable = HeroTable();
-    const options = Object
-        .entries(groupBy(Object.values(heroTable), 'rarity')) // 将式神数据按位阶分组
-        .map(([key, values]) => { // 将式神数据处理成下拉选择器所需要的格式
-          const result = {value: key, label: mapper[key]}
-          const children = values.map(value => {
-            const {id, name, icon} = value; // 只读取式神的id，名字和图标
-            return {label: name, value: id, icon}
-          });
-          return {...result, children};
-        })
-        .filter(value => Object.values(mapper).indexOf(value.label) > 0) // 不显示没有位阶的阴阳师
-        .sort((a, b) => b.value - a.value) // 降序排序
+    const options = Object.entries(groupBy(Object.values(heroTable), "rarity")) // 将式神数据按位阶分组
+      .map(([key, values]) => {
+        // 将式神数据处理成下拉选择器所需要的格式
+        const result = { value: key, label: mapper[key] };
+        const children = values.map(value => {
+          const { id, name, icon } = value; // 只读取式神的id，名字和图标
+          return { label: name, value: id, icon };
+        });
+        return { ...result, children };
+      })
+      .filter(value => Object.values(mapper).indexOf(value.label) > 0) // 不显示没有位阶的阴阳师
+      .sort((a, b) => b.value - a.value); // 降序排序
     return {
-      options,
+      options
     };
   },
   methods: {
@@ -71,14 +73,15 @@ export default {
     },
     filter(inputValue, path) {
       return path.some(option => {
-        return option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1 ||
-            pinyin(option.label.toLowerCase()).indexOf(inputValue.toLowerCase()) > -1;
+        return (
+          option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1 ||
+          pinyin(option.label.toLowerCase()).indexOf(inputValue.toLowerCase()) >
+            -1
+        );
       });
-    },
-  },
-}
+    }
+  }
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

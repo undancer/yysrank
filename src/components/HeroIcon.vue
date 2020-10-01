@@ -1,10 +1,9 @@
 <template>
-  <a-avatar :size="size" :src="this.$data.icon" shape="square"/>
+  <a-avatar :size="size" :src="this.$data.icon" shape="square" />
 </template>
 
 <script>
-
-import {HeroTable} from "@/data";
+import { HeroTable } from "@/data";
 
 export default {
   name: "HeroIcon",
@@ -20,13 +19,11 @@ export default {
   },
   data() {
     const heroTable = HeroTable();
-    const hero = {...heroTable[this.id], id: undefined};
+    const hero = { ...heroTable[this.id], id: undefined };
     delete hero.id;
     return hero;
   }
-}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -7,9 +7,7 @@
 <script>
 export default {
   name: "ReadMe"
-}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,14 +1,14 @@
 <template>
   <a-layout>
     <a-layout-header class="header" style="padding: 0px">
-      <div class="logo"/>
+      <div class="logo" />
       <a-menu
-          :selected-keys="[activeRoute]"
-          :style="{ lineHeight: '64px' }"
-          mode="horizontal"
-          theme="dark"
+        :selected-keys="[activeRoute]"
+        :style="{ lineHeight: '64px' }"
+        mode="horizontal"
+        theme="dark"
       >
-        <a-menu-item v-for="(value,name) in routes" :key="'/'+name">
+        <a-menu-item v-for="(value, name) in routes" :key="'/' + name">
           <router-link :to="'/' + name">
             {{ value.name }}
           </router-link>
@@ -16,10 +16,7 @@
       </a-menu>
     </a-layout-header>
     <a-layout style="padding: 0 24px 24px">
-      <a-page-header
-          :sub-title="subTitle"
-          :title="title"
-      />
+      <a-page-header :sub-title="subTitle" :title="title" />
       <!--        <a-page-header-->
       <!--            :title="title"-->
       <!--            :sub-title="subTitle"-->
@@ -27,10 +24,15 @@
       <!--        />-->
 
       <a-layout-content
-          :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
+        :style="{
+          background: '#fff',
+          padding: '24px',
+          margin: 0,
+          minHeight: '280px'
+        }"
       >
-        <router-view/>
-        <UpdateTips/>
+        <router-view />
+        <UpdateTips />
       </a-layout-content>
     </a-layout>
   </a-layout>
@@ -42,7 +44,7 @@ import UpdateTips from "@/components/UpdateTips";
 
 export default {
   name: "Layout",
-  components: {UpdateTips},
+  components: { UpdateTips },
   watch: {
     $route() {
       this.refreshTitle();
@@ -50,7 +52,7 @@ export default {
   },
   methods: {
     refreshTitle() {
-      const {title, subTitle} = this.$route.meta;
+      const { title, subTitle } = this.$route.meta;
       if (title !== undefined) {
         this.title = title;
       }
@@ -58,23 +60,22 @@ export default {
         this.subTitle = subTitle;
       }
       this.activeRoute = this.$route.fullPath;
-    },
+    }
   },
 
   data() {
     return {
       collapsed: false,
-      title: '',
-      activeRoute: '',
-      subTitle: '',
-      routes: {...config.routes},
+      title: "",
+      activeRoute: "",
+      subTitle: "",
+      routes: { ...config.routes }
     };
-  },
-}
+  }
+};
 </script>
 
 <style scoped>
-
 .logo {
   /*width: 120px;*/
   width: 200px;
