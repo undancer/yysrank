@@ -182,7 +182,7 @@ import HeroSelect from "@/components/HeroSelect";
 import * as _ from "underscore";
 import isContained from "@/utils/arrays";
 import HeroIcon from "@/components/HeroIcon";
-import getReports from "../battles";
+import getReports from "@/modules/win-rate/battles";
 import store from "@/store";
 
 export default {

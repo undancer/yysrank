@@ -7,16 +7,14 @@
 </template>
 
 <script>
-import { Component, Vue } from "vue-property-decorator";
 import Layout from "@/layout";
 import "ant-design-vue/dist/antd.css"; // or 'ant-design-vue/dist/antd.less'
 
-@Component({
+export default {
+  name: "App",
   components: {
     Layout
-  }
-})
-export default class App extends Vue {
+  },
   data() {
     return {
       metaInfo: {
@@ -29,7 +27,7 @@ export default class App extends Vue {
       }
     };
   }
-}
+};
 </script>
 
 <style>

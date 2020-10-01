@@ -53,16 +53,14 @@
 </template>
 
 <script>
-import Hero from "../../../components/Hero";
-import { Component, Vue } from "vue-property-decorator";
 import { HeroRankTable } from "@/data";
+import Hero from "@/components/Hero";
 
-@Component({
+export default {
+  name: "Rank",
   components: {
     Hero
-  }
-})
-export default class Rank extends Vue {
+  },
   data() {
     const tables = Object.entries(HeroRankTable()).map(([, values]) => {
       const row = {};
@@ -80,7 +78,7 @@ export default class Rank extends Vue {
       data: tables
     };
   }
-}
+};
 </script>
 
 <style scoped></style>

@@ -13,13 +13,18 @@
 </template>
 
 <script>
-import { Component, Prop } from "vue-property-decorator";
-
-@Component
-export default class Page extends Vue {
-  @Prop(String) activeKey;
-  @Prop tools;
-}
+export default {
+  name: "Page",
+  props: {
+    tools: Array
+  },
+  data() {
+    return {
+      activeKey: "0",
+      tools: this.tools
+    };
+  }
+};
 </script>
 
 <style scoped></style>
