@@ -2,7 +2,6 @@
   "name": "yysrank",
   "version": "1.0.0",
   "description": "阴阳师阵容胜率查询及阵容推荐 [https://yysrank.ahrisy.com](https://yysrank.ahrisy.com)",
-  "main": "index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
