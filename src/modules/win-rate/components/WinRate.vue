@@ -121,7 +121,7 @@
 
 <script>
 import HeroSelect from "@/components/HeroSelect";
-import * as _ from "underscore";
+import * as _ from "lodash";
 import isContained from "@/utils/arrays";
 import HeroIcon from "@/components/HeroIcon";
 import getReports from "../battles";
