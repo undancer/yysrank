@@ -1,6 +1,6 @@
 {
   "functions": {
-    "src/api/**/*.[jt]s": {
+    "api/**/*.[jt]s": {
       "runtime": "vercel-dev-runtime@0.0.2"
     }
   }
