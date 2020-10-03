@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Ahrisya/yysrank#readme",
   "devDependencies": {
+    "@types/lodash": "^4.14.161",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -38,13 +39,15 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@johmun/vue-tags-input": "^2.1.0",
     "ant-design-vue": "^1.6.5",
     "core-js": "^3.6.5",
     "dexie": "^3.0.2",
+    "element-ui": "^2.13.2",
     "localforage": "^1.9.0",
+    "lodash": "^4.17.20",
     "moment": "^2.29.0",
     "pinyin": "^2.9.1",
-    "underscore": "^1.11.0",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.6",
     "vue-cookies": "^1.7.4",
