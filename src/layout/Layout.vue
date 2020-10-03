@@ -1,46 +1,41 @@
 <template>
   <el-container>
-    <el-header>
+    <el-header height="64px" style="padding: 0px;">
       <div class="logo"/>
       <el-menu
           mode="horizontal"
-          background-color="#545c64"
-          text-color="#fff"
-          active-text-color="#ffd04b"
-          @select="handleSelect"
+          background-color="#001529"
+          text-color="hsla(0,0%,100%,.65)"
+          active-text-color="#1890ff"
+          :default-active="activeRoute"
+          :router="true"
       >
         <el-menu-item
-            v-for="(value, name, index) in routes"
-            :key="'/' + name"
-            :index="`${index}`"
+            v-for="(value, name) in routes"
+            :key="`/${name}`"
+            :index="`/${name}`"
         >
-          <router-link :to="'/' + name">
-            {{ value.name }}
-          </router-link>
+          {{ value.name }}
         </el-menu-item>
       </el-menu>
     </el-header>
-    <el-main>
-      <el-row>
-        <el-col>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-            <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-            <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-          </el-breadcrumb>
-        </el-col>
-      </el-row>
-      <el-row>
-        <el-col>
+    <el-container>
+      <!--      <el-aside width="200px">-->
+      <!--        <el-main>-->
+      <!--          aside-->
+      <!--        </el-main>-->
+      <!--      </el-aside>-->
+      <el-main>
+        <el-card shadow="never">
+          <div slot="header" class="clearfix">
+            <h3>{{ title }}</h3>
+            <span>{{ subTitle }}</span>
+          </div>
           <router-view/>
-        </el-col>
-      </el-row>
-      <UpdateTips/>
-    </el-main>
-    <!--      <el-aside>-->
-    <!--        aside-->
-    <!--      </el-aside>-->
+        </el-card>
+        <UpdateTips/>
+      </el-main>
+    </el-container>
     <el-footer>
       foot
     </el-footer>
@@ -50,9 +45,9 @@
 <script>
 import config from "@/config";
 import UpdateTips from "@/components/UpdateTips";
-import "element-ui/lib/theme-chalk/index.css";
 import Vue from "vue";
 import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
 
 Vue.use(ElementUI);
 
@@ -74,9 +69,6 @@ export default {
         this.subTitle = subTitle;
       }
       this.activeRoute = this.$route.fullPath;
-    },
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
     }
   },
 
