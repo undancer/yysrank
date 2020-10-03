@@ -7,6 +7,10 @@
             :tags="tags"
             :autocomplete-items="filteredItems"
             @tags-changed="newTags => (tags = newTags)"
+            :avoid-adding-duplicates="false"
+            :is-duplicate="() => false"
+            placeholder="请选择式神..."
+            :separators="[';', ',']"
         />
       </el-col>
     </el-row>
@@ -100,7 +104,15 @@ export default {
   data() {
     return {
       tag: "",
-      tags: [],
+      tags: [
+        {text: "ban:鬼王酒吞童子", style: "background-color: #ccc"},
+        {text: "ban:星熊童子", style: "background-color: #ccc"},
+        {text: "不知火"},
+        {text: "化鲸"},
+        {text: "化鲸"},
+        {text: "八岐大蛇"},
+        {text: "大岳丸"},
+      ],
       count: 0,
       thisBan: 341,
       thatBan: 342,
