@@ -6,12 +6,4 @@ import tools5 from "./tools5.md";
 import tools6 from "./tools6.md";
 import tools7 from "./tools7.md";
 
-export default [
-    tools1,
-    tools2,
-    tools3,
-    tools4,
-    tools5,
-    tools6,
-    tools7,
-]
+export default [tools1, tools2, tools3, tools4, tools5, tools6, tools7];

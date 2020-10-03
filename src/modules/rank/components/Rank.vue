@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import Hero from "../../../components/Hero";
+import Hero from "@/components/Hero";
 import {Component, Vue} from "vue-property-decorator";
 import {HeroRankTable} from "@/data";
 
