@@ -89,12 +89,7 @@
 
 <script>
 import VueTagsInput from "@johmun/vue-tags-input";
-import ElementUI from "element-ui";
-import Vue from "vue";
-import "element-ui/lib/theme-chalk/index.css";
 import {HeroTable} from "@/data";
-
-Vue.use(ElementUI);
 
 export default {
   name: "Recommend",
@@ -111,7 +106,7 @@ export default {
         {text: "化鲸"},
         {text: "化鲸"},
         {text: "八岐大蛇"},
-        {text: "大岳丸"},
+        {text: "大岳丸"}
       ],
       count: 0,
       thisBan: 341,
