@@ -39,9 +39,11 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@johmun/vue-tags-input": "^2.1.0",
     "ant-design-vue": "^1.6.5",
     "core-js": "^3.6.5",
     "dexie": "^3.0.2",
+    "element-ui": "^2.13.2",
     "localforage": "^1.9.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.0",
