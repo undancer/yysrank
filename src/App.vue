@@ -2,32 +2,34 @@
   <div id="app">
     <!--    <img alt="Vue logo" src="./assets/logo.png">-->
     <!--    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
-    <Layout/>
+    <Layout />
   </div>
 </template>
 
 <script>
-import {Component, Vue} from 'vue-property-decorator';
+import { Component, Vue } from "vue-property-decorator";
 import Layout from "@/layout";
-import 'ant-design-vue/dist/antd.css'; // or 'ant-design-vue/dist/antd.less'
+import "ant-design-vue/dist/antd.css"; // or 'ant-design-vue/dist/antd.less'
+import "element-ui/lib/theme-chalk/index.css";
+import "@/styles/app.scss";
 
 @Component({
   components: {
-    Layout,
-  },
+    Layout
+  }
 })
 export default class App extends Vue {
   data() {
     return {
       metaInfo: {
-        title: 'My Example App',
-        titleTemplate: '%s - Yay!',
+        title: "My Example App",
+        titleTemplate: "%s - Yay!",
         htmlAttrs: {
-          lang: 'en',
+          lang: "en",
           amp: true
         }
       }
-    }
+    };
   }
 }
 </script>

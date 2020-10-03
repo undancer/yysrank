@@ -37,7 +37,7 @@
       </el-main>
     </el-container>
     <el-footer>
-      foot
+      <Footer/>
     </el-footer>
   </el-container>
 </template>
@@ -45,10 +45,14 @@
 <script>
 import config from "@/config";
 import UpdateTips from "@/components/UpdateTips";
+import Footer from "@/layout/Footer";
 
 export default {
   name: "Layout",
-  components: {UpdateTips},
+  components: {
+    UpdateTips,
+    Footer
+  },
   watch: {
     $route() {
       this.refreshTitle();
@@ -88,5 +92,10 @@ export default {
   /*background: rgba(255, 255, 255, 0.2);*/
   /*margin: 16px 28px 16px 0;*/
   float: left;
+}
+
+.el-main {
+  min-height: calc(100vh - 120px);
+  /*120px是header+footer的高度之和（按实际情况改）*/
 }
 </style>

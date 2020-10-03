@@ -9,7 +9,7 @@ import Page from "@/modules/page/components/Page";
 export default {
   name: "MoreTools",
   components: {
-    Page: Page
+    Page
   },
   data() {
     return {

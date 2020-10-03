@@ -1,5 +1,5 @@
 <template>
-  <Page :contents="tutorials"/>
+  <Page :contents="tutorials" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ import Page from "@/modules/page/components/Page";
 export default {
   name: "Tutorial",
   components: {
-    Page: Page
+    Page
   },
   data() {
     return {
