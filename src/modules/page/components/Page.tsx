@@ -13,14 +13,17 @@ class Page extends Vue {
   @Prop({ default: 1 }) activeKey: number | undefined;
 
   protected render() {
-    const list = this.contents
-      ? this.contents.map(({ attributes: { title }, html }, index) => (
+    if (this.contents) {
+      const list = this.contents.map(
+        ({ attributes: { title }, html }, index) => (
           <el-collapse-item title={title} name={index + 1}>
             <div domPropsInnerHTML={html} />
           </el-collapse-item>
-        ))
-      : [];
-    return <el-collapse value={this.activeKey}>{list}</el-collapse>;
+        )
+      );
+      return <el-collapse value={this.activeKey}>{list}</el-collapse>;
+    }
+    return <div />;
   }
 }
 
