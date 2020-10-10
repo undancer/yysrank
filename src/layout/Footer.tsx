@@ -2,17 +2,6 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 class Footer extends Vue {
-  protected render() {
-    const copyright = this.renderCopyright();
-    const poweredBy = this.renderPoweredBy();
-    return (
-      <div style="text-align: center;">
-        {copyright}
-        {poweredBy}
-      </div>
-    );
-  }
-
   renderCopyright() {
     const year = new Date().getFullYear();
     return (
@@ -50,6 +39,17 @@ class Footer extends Vue {
           NexT.Gemini
         </a>
         强力驱动
+      </div>
+    );
+  }
+
+  protected render() {
+    const copyright = this.renderCopyright();
+    const poweredBy = this.renderPoweredBy();
+    return (
+      <div style="text-align: center;">
+        {copyright}
+        {poweredBy}
       </div>
     );
   }

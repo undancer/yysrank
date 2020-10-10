@@ -1,9 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
 import Hero from "@/components/Hero";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { HeroRankTable } from "@/data";
-
 /* eslint-enable */
 
 @Component({

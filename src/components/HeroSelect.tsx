@@ -7,20 +7,6 @@ import pinyin from "@/utils/pinyin";
 export default class HeroSelect extends Vue {
   @Prop({ default: "" }) placeholder!: string;
 
-  protected render() {
-    return (
-      <el-cascader
-        placeholder={this.placeholder}
-        options={this.$data.options}
-        filterable={true}
-        filter-method={this.onFilter}
-        onChange={this.handleChange}
-        show-all-levels={false}
-        size={"medium"}
-      />
-    );
-  }
-
   data() {
     const mapper: { [key: string]: string } = {
       "2": "N",
@@ -71,6 +57,20 @@ export default class HeroSelect extends Vue {
     return (
       node.label.toLowerCase().indexOf(keyword.toLowerCase()) > -1 ||
       pinyin(node.label.toLowerCase()).indexOf(keyword.toLowerCase()) > -1
+    );
+  }
+
+  protected render() {
+    return (
+      <el-cascader
+        placeholder={this.placeholder}
+        options={this.$data.options}
+        filterable={true}
+        filter-method={this.onFilter}
+        onChange={this.handleChange}
+        show-all-levels={false}
+        size={"medium"}
+      />
     );
   }
 }
