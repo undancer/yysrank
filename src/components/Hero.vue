@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-avatar :size="size" :src="this.$data.icon" shape="square"/>
+    <a-avatar :size="size" :src="this.$data.icon" shape="square" />
     <span v-if="showName">
       {{ this.$data.name }}
     </span>
@@ -8,8 +8,7 @@
 </template>
 
 <script>
-
-import {HeroTable} from "@/data";
+import { HeroTable } from "@/data";
 
 export default {
   name: "Hero",
@@ -29,13 +28,11 @@ export default {
   },
   data() {
     const heroTable = HeroTable();
-    const hero = {...heroTable[this.id], id: undefined};
+    const hero = { ...heroTable[this.id], id: undefined };
     delete hero.id;
     return hero;
   }
-}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
