@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Antd from "ant-design-vue";
-import App from "@/App.vue";
+import App from "@/App";
 import router from "@/router";
 import VueCookies from "vue-cookies";
 import VueRouter from "vue-router";
@@ -18,7 +18,7 @@ Vue.use(VueRouter);
 Vue.use(VueCookies);
 
 new Vue({
-  render: h => h(App),
-  store,
-  router
+    render: h => h(App),
+    store,
+    router
 }).$mount("#app");
