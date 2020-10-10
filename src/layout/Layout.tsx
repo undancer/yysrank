@@ -29,7 +29,7 @@ class Layout extends Vue {
   render() {
     return (
       <el-container>
-        <el-header class="app-header">{this.renderHeader()}</el-header>
+        <el-header id="app-header">{this.renderHeader()}</el-header>
         <el-container>
           <el-main>{this.renderMain()}</el-main>
         </el-container>
@@ -47,7 +47,7 @@ class Layout extends Vue {
 
     return (
       <div>
-        <div class="logo" />
+        <div id="logo" />
         <el-menu
           mode="horizontal"
           background-color="#001529"
