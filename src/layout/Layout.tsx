@@ -29,7 +29,9 @@ class Layout extends Vue {
   render() {
     return (
       <el-container>
-        <el-header id="app-header">{this.renderHeader()}</el-header>
+        <el-header id="app-header" height="64">
+          {this.renderHeader()}
+        </el-header>
         <el-container>
           <el-main>{this.renderMain()}</el-main>
         </el-container>
