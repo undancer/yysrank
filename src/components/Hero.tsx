@@ -2,16 +2,24 @@ import {HeroTable} from "@/data";
 import {Component, Prop, Vue} from "vue-property-decorator";
 import _ from "lodash";
 
-@Component
-class HeroIcon extends Vue {
+@Component({})
+class Hero extends Vue {
     @Prop({required: true})
     id!: number;
     @Prop({default: 48})
     size!: number;
+    @Prop({default: true})
+    showName!: boolean;
 
     protected render() {
-        const {icon} = this.fetchHero(this.id);
-        return <a-avatar size={this.size} src={icon} shape="square"/>;
+        const {name, icon} = this.fetchHero(this.id);
+        const nameSpan = <span>{this.showName ? name : ""}</span>;
+        return (
+            <div>
+                <a-avatar size={this.size} src={icon} shape="square"/>
+                {nameSpan}
+            </div>
+        );
     }
 
     private fetchHero(id: number) {
@@ -24,4 +32,4 @@ class HeroIcon extends Vue {
     }
 }
 
-export default HeroIcon;
+export default Hero;

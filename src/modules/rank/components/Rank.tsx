@@ -1,9 +1,7 @@
 /* eslint-disable */
-// @ts-ignore
 import Hero from "@/components/Hero";
 import { Component, Vue } from "vue-property-decorator";
 import { HeroRankTable } from "@/data";
-/* eslint-enable */
 
 @Component({
   components: {
@@ -100,7 +98,7 @@ export default class Rank extends Vue {
   renderHero(row: any, column: any, id: number) {
     return (
       <div>
-        <Hero id={id} />
+        <Hero id={`${id}`} />
       </div>
     );
   }

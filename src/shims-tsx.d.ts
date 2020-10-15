@@ -1,3 +1,5 @@
+import "vue-tsx-support/enable-check";
+
 import Vue, { VNode } from "vue";
 
 declare global {
